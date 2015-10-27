@@ -1,10 +1,10 @@
 <?php
   $nome   = $_GET['nome'];
-  $CPF  = $_GET['CPF'];
-  $RG  = $_GET['RG'];
-  $nascimento  = $_GET['data de nascimento'];
+  $cpf  = $_GET['cpf'];
+  $rg  = $_GET['rg'];
+  $datanascimento  = $_GET['data'];
   $endereço  = $_GET['endereço'];
-  $Estado = $_GET['Estado civil'];
+  $estadocivil = $_GET['Estado civil'];
   $numero  = $_GET['numero de matricula'];
   $setor  = $_GET['setor'];
   $cargo  = $_GET['cargo'];
@@ -14,7 +14,7 @@
  
   $dbh = new PDO('pgsql:host=localhost;port=5432;dbname=ifsp', 'postgres', 'postgres');
  
-  $sql = "INSERT INTO dep VALUES ($numero, '$nome', '$setor')";
+  $sql = "INSERT INTO dep VALUES ($nome, $cpf, '$rg', $numero, '$setor', '$estadocivil', $salario, '$gestor', $cargo', '$datanascimento', '$endereco');
 
   $resultado = $dbh->exec($sql);
 ?>
