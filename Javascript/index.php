@@ -12,8 +12,7 @@
   $gestor  = $_GET['gestor'];
  
  
-  $dbh = new PDO('pgsql:host=localhost;port=5432;dbname=ifsp', 'postgres', 'postgres');
- 
+
   $sql = "INSERT INTO dep VALUES ($nome, $cpf, '$rg', $numero, '$setor', '$estadocivil', $salario, '$gestor', $cargo', '$datanascimento', '$endereco');
 
   $resultado = $dbh->exec($sql);
@@ -29,7 +28,7 @@
       if($resultado > 0){
         echo '<p>Cadastro feito com sucesso!</p>';
       }else{
-        echo '<p>Cadastro nÃo realizado!</p>';
+        echo '<p>Erro no preenchimento cadastro nÃo realizado!</p>';
       }
     ?>
   </body>
